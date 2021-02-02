@@ -1,3 +1,7 @@
+<%= flash[:notice]%>
+
+<%= link_to "Voltar", promotions_path %>
+
 <h1><%= @promotion.name %> </h1>
 <p> <%= number_to_percentage @promotion.discount_rate, precision: 2, separator: "," %> </p>
 <p> <%= @promotion.code %> </p>
@@ -5,4 +9,8 @@
 <!-- <p> <%= Date.strptime(@promotion.expiration_date.to_s, "%Y-%m-%d").strftime("%d/%m/%Y") %> </p> -->
 <dd><%= I18n.localize(@promotion.expiration_date) %></dd>
 <p> <%= @promotion.coupon_quantity %> </p>
-<%= link_to "Voltar", promotions_path %>
+
+<%= link_to 'Gerar Cupons', generate_coupons_promotion_path(@promotion), method: :post%>
+<% @promotion.coupons.each do |coupon|%>
+<%= coupon.code%>
+<%end%>
