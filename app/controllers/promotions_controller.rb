@@ -12,9 +12,6 @@ class PromotionsController < ApplicationController
   end
 
   def create
-    promotion_params = params.require(:promotion).permit(:name, :description,
-                                                         :code, :discount_rate,
-                                                         :coupon_quantity, :expiration_date)
     @promotion = Promotion.new(promotion_params)
 
     if @promotion.save
@@ -23,6 +20,21 @@ class PromotionsController < ApplicationController
       render "new"
     end
   end
+
+  def edit
+    @promotion = Promotion.find(params[:id])
+  end
+
+  def update
+    @promotion = Promotion.find(params[:id])
+
+    if @promotion.update(promotion_params)
+      redirect_to @promotion
+    else
+      render :edit
+    end
+  end
+
 
   def generate_coupons
     @promotion = Promotion.find(params[:id])
@@ -34,4 +46,12 @@ class PromotionsController < ApplicationController
     redirect_to @promotion
   end
 
+  private
+    def promotion_params
+      params.require(:promotion).permit(:name, :description,
+        :code, :discount_rate,
+        :coupon_quantity, :expiration_date)
+    end
+
 end
+
