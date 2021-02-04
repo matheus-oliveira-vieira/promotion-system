@@ -1,0 +1,41 @@
+[33mcommit ecb4526373f81935140cd4730d6a1caaf3d351f5[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Matheus Oliveira <matheus.oliveirav@gmail.com>
+Date:   Tue Feb 2 18:39:22 2021 -0300
+
+    Adicionando funcionalidade de editar a promoção
+
+[33mcommit 38358eced4174589a48ad8f2a581e1984991016e[m
+Author: Matheus Oliveira <matheus.oliveirav@gmail.com>
+Date:   Tue Feb 2 08:47:02 2021 -0300
+
+    Adicionando cupons
+
+[33mcommit 7d2c2dc7e2aaa63e843b78ad587c867edcf23c15[m
+Author: Matheus Oliveira <matheus.oliveirav@gmail.com>
+Date:   Sat Jan 30 10:56:28 2021 -0300
+
+    Adicionando Cadastro e validando promoções
+
+[33mcommit fe4800249170d09ab082273826e4c5034b795611[m
+Author: Matheus Oliveira <matheus.oliveirav@gmail.com>
+Date:   Wed Jan 27 20:31:05 2021 -0300
+
+    Resolvendo visualização da promoção
+
+[33mcommit 34b4fb86406f03cf1ec340d1e1bf0262cffaae01[m
+Author: Matheus Oliveira <matheus.oliveirav@gmail.com>
+Date:   Fri Jan 22 21:38:51 2021 -0300
+
+    WIP Ver promoção
+
+[33mcommit 1474302959bfde618d19cb6c567f55e8fe1b595e[m
+Author: Matheus Oliveira <matheus.oliveirav@gmail.com>
+Date:   Wed Jan 20 21:53:35 2021 -0300
+
+    Visitante ver a homepage
+
+[33mcommit c72506c5a779e720d36a7591f775bec7e7ee85a4[m
+Author: Matheus Oliveira <matheus.oliveirav@gmail.com>
+Date:   Wed Jan 20 20:20:31 2021 -0300
+
+    Início do Projeto

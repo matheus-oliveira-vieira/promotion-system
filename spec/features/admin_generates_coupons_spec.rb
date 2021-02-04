@@ -16,4 +16,8 @@ feature "Admin generate coupons" do
     expect(page).to have_content('NATAL10-0100')
     expect(page).not_to have_content('NATAL10-0101')
   end
+
+  scenario 'hide button if coupons generated' do
+    
+  end
 end

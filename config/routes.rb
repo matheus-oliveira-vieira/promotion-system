@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :promotions, only: %i[index new create show edit update] do
     post 'generate_coupons', on: :member
   end
-  
+  resources :coupons, only: [] do
+    post 'inactivate', on: :member
+  end
 end
