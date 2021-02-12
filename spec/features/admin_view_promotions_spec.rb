@@ -33,8 +33,8 @@ feature "Admin view promotions" do
                       description: "Promoção de Cyber Monday",
                       code: "CYBER15", discount_rate: 15,
                       expiration_date: "22/12/2033", user: user)
-    login_as user
     visit root_path
+    login_as user
     click_on "Promoções"
     click_on "Cyber Monday"
 
@@ -47,7 +47,9 @@ feature "Admin view promotions" do
   end
 
   scenario "and no promotion are created" do
+    user = User.create!(email: 'matheus@email.com', password: '123456')
     visit root_path
+    login_as user
     click_on "Promoções"
 
     expect(page).to have_content("Nenhuma promoção cadastrada")

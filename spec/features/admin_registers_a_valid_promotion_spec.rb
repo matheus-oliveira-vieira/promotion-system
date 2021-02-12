@@ -2,7 +2,9 @@ require "rails_helper"
 
 feature "Admin registers a valid promotion" do
   scenario "and attributes cannot be blank" do
+    user = User.create!(email: 'matheus@email.com', password: '123456')
     visit root_path
+    login_as user
     click_on "Promoções"
     click_on "Registrar uma promoção"
     fill_in "Nome", with: ""

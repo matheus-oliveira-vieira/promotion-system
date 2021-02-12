@@ -11,6 +11,7 @@ class PromotionsController < ApplicationController
 
   def new
     @promotion = Promotion.new
+    @product_categories = ProductCategory.all
   end
 
   def create
@@ -19,6 +20,7 @@ class PromotionsController < ApplicationController
     if @promotion.save
       redirect_to @promotion
     else
+      @product_categories = ProductCategory.all
       render "new"
     end
   end
@@ -43,11 +45,22 @@ class PromotionsController < ApplicationController
     redirect_to @promotion, notice: t('.success')
   end
 
+  def approve
+    promotion = Promotion.find(params[:id])
+    promotion.approve!(current_user)
+    redirect_to promotion
+  end
+
+  def search
+    @promotions = Promotion.where('name like ? OR description like ?',
+            "%#{params[:q]}%", "%#{params[:q]}%")
+  end
+
   private
     def promotion_params
       params.require(:promotion).permit(:name, :description,
         :code, :discount_rate,
-        :coupon_quantity, :expiration_date)
+        :coupon_quantity, :expiration_date, product_category_ids: [])
     end
 
 end

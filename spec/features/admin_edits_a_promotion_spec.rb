@@ -10,7 +10,7 @@ feature "Admin edits promotion" do
     visit root_path
     click_on 'Promoções'
     click_on promotion.name
-    click_on 'Editar'
+    click_on "Editar"
 
     fill_in 'Nome', with: 'Natal 2021'
     click_on 'Salvar'
